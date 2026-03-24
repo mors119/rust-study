@@ -30,5 +30,17 @@ pub mod chapter17_hash_set;
 pub mod chapter18_str;
 pub mod chapter19_string;
 pub mod chapter20_str_and_string;
-pub mod chapter21_str_example;
-pub mod chapter22_str;
+
+// 반복자
+pub mod chapter21_iter;
+pub mod chapter22_map;
+pub mod chapter23_filter;
+pub mod chapter24_filter_map;
+pub mod chapter25_for_each;
+pub mod chapter26_take_while;
+pub mod chapter27_example;
+
+// 소유권
+pub mod chapter28_owner_ship;
+pub mod chapter29_copy;
+pub mod chapter30_clone;

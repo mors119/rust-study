@@ -28,8 +28,20 @@ pub fn run(args: &[String]) {
         "18" => chapters::chapter18_str::run(),
         "19" => chapters::chapter19_string::run(),
         "20" => chapters::chapter20_str_and_string::run(),
-        "21" => chapters::chapter21_str_example::run(),
-        "22" => chapters::chapter22_str::run(),
+        // 반복자
+        "21" => chapters::chapter21_iter::run(),
+        "22" => chapters::chapter22_map::run(),
+        "23" => chapters::chapter23_filter::run(),
+        "24" => chapters::chapter24_filter_map::run(),
+        "25" => chapters::chapter25_for_each::run(),
+        "26" => chapters::chapter26_take_while::run(),
+        "27" => chapters::chapter27_example::run(),
+        // 소유권
+        "28" => chapters::chapter28_owner_ship::run(),
+        "29" => chapters::chapter29_copy::run(),
+        "30" => chapters::chapter30_clone::run(),
+
+        // _
         _ => println!("없는 챕터입니다."),
     }
 }
