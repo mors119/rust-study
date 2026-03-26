@@ -5,6 +5,8 @@
 
 // let [변수명] = if [조건] { 값 } else { 값 };
 
+// * if let = "패턴이 맞으면 꺼내서 쓰고, 아니면 무시"
+
 pub fn run() {
     let mut n = 8;
 
@@ -18,4 +20,14 @@ pub fn run() {
     let a = if n > 5 { 1 } else { 0 };
 
     println!("{}", a);
+
+    // if let <타입>=<값>
+    // while let 과 마찬가지로 <값>의 위치에 이미 결정된 값이 오면 안된다
+    let x: Option<i32> = None;
+
+    if let Some(v) = x {
+        println!("{}", v);
+    } else {
+        println!("값 없음");
+    }
 }

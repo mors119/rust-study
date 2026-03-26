@@ -43,4 +43,33 @@ pub mod chapter27_example;
 // 소유권
 pub mod chapter28_owner_ship;
 pub mod chapter29_copy;
-pub mod chapter30_clone;
+pub mod chapter30_struct;
+
+// 열거형
+pub mod chapter31_enum;
+pub mod chapter32_option;
+pub mod chapter33_result;
+
+// 트레잇
+pub mod chapter34_trait_1;
+pub mod chapter35_trait_2;
+pub mod chapter36_polymorphism;
+
+// 제네릭
+pub mod chapter37_generic_1;
+pub mod chapter38_generic_2;
+pub mod chapter39_lite_time;
+
+// 스마트 포인터
+pub mod chapter40_smart_pointer_1;
+pub mod chapter41_smart_pointer_2;
+
+// 에러 핸들링
+pub mod chapter42_error_handling;
+
+// 모듈화
+pub mod chapter43_module;
+
+// etc
+pub mod chapter44_etc_1;
+pub mod chapter45_etc_2;

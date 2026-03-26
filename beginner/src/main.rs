@@ -1,5 +1,7 @@
 use std::env;
 
+// 이 파일(모듈)을 컴파일 트리에 포함시켜라
+// 모든 모듈은 "부모 모듈에서 선언되어야 존재한다"
 mod chapters;
 mod match_chapter;
 

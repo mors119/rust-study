@@ -1,6 +1,7 @@
-use crate::chapters; // 현재 크레이트(crate)의 루트 기준으로 chapters 모듈을 가져옴
+use crate::chapters; // 현재 크레이트(crate)의 루트에 있는 chapters 모듈을 가져옴
 
 // args를 받아서 어떤 챕터를 실행할지 결정
+// &Vec<String> == &[String]
 pub fn run(args: &[String]) {
     match args[1].as_str() {
         "1" => chapters::chapter01_mainfn::run(args),
@@ -39,7 +40,29 @@ pub fn run(args: &[String]) {
         // 소유권
         "28" => chapters::chapter28_owner_ship::run(),
         "29" => chapters::chapter29_copy::run(),
-        "30" => chapters::chapter30_clone::run(),
+        "30" => chapters::chapter30_struct::run(),
+        // 열거형
+        "31" => chapters::chapter31_enum::run(),
+        "32" => chapters::chapter32_option::run(),
+        "33" => chapters::chapter33_result::run(),
+        // 트레잇
+        "34" => chapters::chapter34_trait_1::run(),
+        "35" => chapters::chapter35_trait_2::run(),
+        "36" => chapters::chapter36_polymorphism::run(),
+        // 제네릭
+        "37" => chapters::chapter37_generic_1::run(),
+        "38" => chapters::chapter38_generic_2::run(),
+        "39" => chapters::chapter39_lite_time::run(),
+        // 스마트 포인터
+        "40" => chapters::chapter40_smart_pointer_1::run(),
+        "41" => chapters::chapter41_smart_pointer_2::run(),
+        // 에러 핸들링
+        "42" => chapters::chapter42_error_handling::run(),
+        // 모듈화
+        "43" => chapters::chapter43_module::run(),
+        // etc
+        "44" => chapters::chapter44_etc_1::run(),
+        "45" => chapters::chapter45_etc_2::run(),
 
         // _
         _ => println!("없는 챕터입니다."),
