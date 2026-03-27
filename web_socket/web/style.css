@@ -1,0 +1,240 @@
+/* WebSocket 클라이언트 스타일시트 */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* 연결 상태 표시 */
+.status {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.connected {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.disconnected {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* 메시지 영역 */
+#messages {
+  border: 1px solid #ddd;
+  height: 300px;
+  padding: 10px;
+  overflow-y: scroll;
+  background-color: #f8f9fa;
+  margin: 20px 0;
+  border-radius: 5px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+}
+
+.message {
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 5px;
+  word-wrap: break-word;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sent {
+  background-color: #e3f2fd;
+  text-align: right;
+  border-left: 4px solid #2196f3;
+}
+
+.received {
+  background-color: #f1f8e9;
+  border-left: 4px solid #4caf50;
+}
+
+.system {
+  background-color: #fff3cd;
+  font-style: italic;
+  border-left: 4px solid #ffc107;
+  text-align: center;
+}
+
+/* 입력 그룹 */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+input[type='text'] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+input[type='text']:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* 버튼 스타일 */
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* 컨트롤 그룹 */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+/* 특별한 버튼들 */
+#connectBtn {
+  background-color: #28a745;
+}
+
+#connectBtn:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+#disconnectBtn {
+  background-color: #dc3545;
+}
+
+#disconnectBtn:hover:not(:disabled) {
+  background-color: #c82333;
+}
+
+#binaryBtn {
+  background-color: #6f42c1;
+}
+
+#binaryBtn:hover:not(:disabled) {
+  background-color: #5a2d91;
+}
+
+#testBtn {
+  background-color: #fd7e14;
+}
+
+#testBtn:hover:not(:disabled) {
+  background-color: #e8650e;
+}
+
+/* 메시지 내용 스타일 */
+.timestamp {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 3px;
+}
+
+.username {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  #messages {
+    height: 250px;
+  }
+}
+
+/* 스크롤바 스타일 (WebKit) */
+#messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+#messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+#messages::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+#messages::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

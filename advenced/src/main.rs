@@ -1,5 +1,6 @@
 use std::env;
 
+mod asynchronous;
 mod command;
 mod files;
 mod matcher;

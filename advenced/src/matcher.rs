@@ -1,3 +1,4 @@
+use crate::asynchronous;
 use crate::command;
 use crate::files;
 use crate::network;
@@ -54,6 +55,23 @@ pub fn run(args: &[String]) {
             _ => {
                 println!("thread 카테고리의 해당 번호가 없습니다.");
                 log::warn!("unknown thread number: {}", args[2]);
+            }
+        },
+
+        "asynchronous" => match args[2].as_str() {
+            "1" => asynchronous::async01_async_await::run(),
+            "2" => asynchronous::async02_tokio_file::run(),
+            "3" => asynchronous::async03_tokio_byte::run(),
+            "4" => asynchronous::async04_tokio_buf::run(),
+            "5" => asynchronous::async05_tokio_tcp_server::run().expect("REASON"),
+            "6" => asynchronous::async06_tokio_tcp_client::run(),
+            "7" => asynchronous::async07_tokio_web_socket::run(),
+            "8" => asynchronous::async08_tokio_sample::run(),
+            "9" => asynchronous::async09_tokio_web_socket_test::run(),
+
+            _ => {
+                println!("asynchronous 카테고리의 해당 번호가 없습니다.");
+                log::warn!("unknown asynchronous number: {}", args[2]);
             }
         },
 
