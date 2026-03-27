@@ -4,9 +4,11 @@ mod command;
 mod files;
 mod matcher;
 mod network;
+mod thread;
 
 fn main() {
     log4rs::init_file("log4rs.yml", Default::default()).unwrap();
+
     log::info!("application started");
 
     let args: Vec<String> = env::args().collect();

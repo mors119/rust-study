@@ -12,7 +12,7 @@ pub fn run() {
 
 // 여러 줄 한번에 출력 BufWriter
 fn _lines_output() {
-    let stdout = io::stdout().lock(); // 락으로 다른 쓰레드 인터럽트 방지
+    let stdout = io::stdout().lock(); // 락으로 다른 스레드 인터럽트 방지
     let mut writer = BufWriter::new(stdout); // BufWriter는 stdout뿐 아니라 파일, TCP Stream에도 사용
 
     for i in 1..=1000 {

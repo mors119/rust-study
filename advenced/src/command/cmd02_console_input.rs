@@ -4,7 +4,7 @@ pub fn run() {
     mono_thread();
 }
 
-// 단일 쓰레드
+// 단일 스레드
 fn mono_thread() {
     let stdin = std::io::stdin(); // 콘손 입력용 핸들러
     let mut buf = String::new();
@@ -18,11 +18,11 @@ fn mono_thread() {
     println!("k = {}", k);
 }
 
-// 멀티 쓰레드
+// 멀티 스레드
 fn _multi_thread() {
     let mut buf = String::new();
-    // 콘솔 핸들러를 얻은 후 lock을 걸지 않으면, 중간에 콘솔 핸들러를 다른 쓰레드에 빼앗길 수도 있다.
-    let len = io::stdin()
+    // 콘솔 핸들러를 얻은 후 lock을 걸지 않으면, 중간에 콘솔 핸들러를 다른 스레드에 빼앗길 수도 있다.
+    let _len = io::stdin()
         .lock() // 핸들에 Lock 걸기
         .read_line(&mut buf)
         .expect("reading console input error.");
