@@ -2,6 +2,8 @@ use std::env;
 
 mod asynchronous;
 mod command;
+mod crawling;
+mod encryption;
 mod files;
 mod matcher;
 mod network;

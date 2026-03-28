@@ -1,4 +1,4 @@
-/* 
+/*
 [클라이언트]
 connect_async / new WebSocket()
         ↓
@@ -15,12 +15,12 @@ send / receive 동시에 실행
 Message::Text / Binary / Close
 */
 
-mod types;
-mod server;
 mod client;
+mod server;
+mod types;
 
-use server::run_server;
 use client::run_client;
+use server::run_server;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {

@@ -1,5 +1,7 @@
 use crate::asynchronous;
 use crate::command;
+use crate::crawling;
+use crate::encryption;
 use crate::files;
 use crate::network;
 use crate::thread;
@@ -41,7 +43,6 @@ pub fn run(args: &[String]) {
                 log::warn!("unknown network number: {}", args[2]);
             }
         },
-
         "thread" => match args[2].as_str() {
             "1" => thread::thread01_basic::run(),
             "2" => thread::thread02_move::run(),
@@ -57,7 +58,6 @@ pub fn run(args: &[String]) {
                 log::warn!("unknown thread number: {}", args[2]);
             }
         },
-
         "asynchronous" => match args[2].as_str() {
             "1" => asynchronous::async01_async_await::run(),
             "2" => asynchronous::async02_tokio_file::run(),
@@ -72,6 +72,38 @@ pub fn run(args: &[String]) {
             _ => {
                 println!("asynchronous 카테고리의 해당 번호가 없습니다.");
                 log::warn!("unknown asynchronous number: {}", args[2]);
+            }
+        },
+        "encryption" => match args[2].as_str() {
+            "1" => encryption::encryption01_random::run(),
+            "2" => encryption::encryption02_hash::run(),
+            "3" => encryption::encryption03_symmetric_key::run(),
+            "4" => encryption::encryption04_asymmetric_key::run(),
+
+            _ => {
+                println!("encryption 카테고리의 해당 번호가 없습니다.");
+                log::warn!("unknown encryption number: {}", args[2]);
+            }
+        },
+        "crawling" => match args[2].as_str() {
+            "1" => {
+                if let Err(e) = crawling::crawling01_reqwest::run() {
+                    eprintln!("{e}");
+                    log::error!("crawling error: {}", e);
+                }
+            }
+            "2" => crawling::crawling02_get::run(),
+            "3" => {
+                if let Err(e) = crawling::crawling03_post::run() {
+                    eprintln!("{e}");
+                    log::error!("crawling error: {}", e);
+                }
+            }
+            "4" => crawling::crawling04_scraper::run(),
+
+            _ => {
+                println!("crawling 카테고리의 해당 번호가 없습니다.");
+                log::warn!("unknown crawling number: {}", args[2]);
             }
         },
 
