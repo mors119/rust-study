@@ -5,6 +5,7 @@ use crate::encryption;
 use crate::files;
 use crate::network;
 use crate::thread;
+use crate::web_server;
 
 pub fn run(args: &[String]) {
     match args[1].as_str() {
@@ -100,12 +101,39 @@ pub fn run(args: &[String]) {
                 }
             }
             "4" => crawling::crawling04_scraper::run(),
+            "5" => crawling::crawling05_select::run(),
+            "6" => crawling::crawling06_node::run(),
 
             _ => {
                 println!("crawling 카테고리의 해당 번호가 없습니다.");
                 log::warn!("unknown crawling number: {}", args[2]);
             }
         },
+        "web_server" => match args[2].as_str() {
+            "1" => {
+                if let Err(e) = web_server::web_server01_main::main() {
+                    eprintln!("{e}");
+                    log::error!("crawling error: {}", e);
+                }
+            }
+            "2" => {
+                if let Err(e) = web_server::web_server02_actix_web::run() {
+                    eprintln!("{e}");
+                    log::error!("crawling error: {}", e);
+                }
+            }
+
+            _ => {
+                println!("web_server 카테고리의 해당 번호가 없습니다.");
+                log::warn!("unknown web_server number: {}", args[2]);
+            }
+        },
+        "axum" => {
+            if let Err(e) = web_server::web_server01_main::main() {
+                eprintln!("{e}");
+                log::error!("crawling error: {}", e);
+            }
+        }
 
         _ => {
             println!("알 수 없는 category 입니다.");

@@ -20,8 +20,8 @@ struct CreateRecordsRequest {
 
 #[derive(Deserialize, Debug)]
 struct CreateRecordResponse {
-    json: Option<CreateRecordsRequest>, // httpbin 특성
-    url: String,
+    _json: Option<CreateRecordsRequest>, // httpbin 특성
+    _url: String,
 }
 
 // [API Client]

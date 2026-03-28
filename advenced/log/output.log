@@ -1,3 +1,13 @@
 2026-03-26 17:25:50 WARN - unknown category: net
 2026-03-27 19:28:36 ERROR - No such file or directory (os error 2)
 2026-03-28 14:59:50 WARN - unknown category: ring
+2026-03-28 22:10:12 WARN - this is warn.
+2026-03-28 23:33:44 WARN - this is warn.
+2026-03-28 23:34:23 WARN - this is warn.
+2026-03-28 23:35:13 WARN - this is warn.
+2026-03-28 23:35:30 WARN - this is warn.
+2026-03-28 23:36:18 WARN - this is warn.
+2026-03-28 23:36:35 WARN - this is warn.
+2026-03-28 23:45:11 ERROR - crawling error: error returned from database: (code: 14) unable to open database file
+2026-03-28 23:46:06 ERROR - crawling error: error returned from database: (code: 14) unable to open database file
+2026-03-28 23:47:57 ERROR - crawling error: error returned from database: (code: 14) unable to open database file

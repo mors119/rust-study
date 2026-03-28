@@ -358,7 +358,7 @@ C에서는 NULL 체크가 흔하다.
 Rust는 `null`을 일반 값으로 거의 쓰지 않고, 대신 `Option<T>`를 쓴다.
 
 ```rust
-let name: Option<String> = Some(String::from("Heeseong"));
+let name: Option<String> = Some(String::from("mors"));
 ```
 
 즉 Rust 코드는 “포인터가 null인지”보다 “값이 있을 수도 없을 수도 있는 상태를 타입으로 표현했는지”를 읽어야 한다.
