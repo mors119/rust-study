@@ -2,6 +2,7 @@
 
 ### beginner
 
+```text
 ├── chapters
 │ ├── 00.call.md
 │ ├── 01.main.md
@@ -55,5 +56,6 @@
 │ └── mod.rs
 ├── main.rs
 └── match_chapter.rs
+```
 
-#### Advanced
+### Advanced
