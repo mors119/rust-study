@@ -1,8 +1,8 @@
-# rust study
+# Rust study
 
-### beginner
+### Beginner
 
-기초적인 rust 사용 방법을 배웁니다.
+기초적인 Rust 사용 방법을 학습.
 
 ##### 실행방법
 
@@ -18,6 +18,7 @@ cargo run chapter 1
 ```
 
 ```text
+beginner/src
 ├── chapters
 │ ├── 00.call.md
 │ ├── 01.main.md
@@ -75,7 +76,7 @@ cargo run chapter 1
 
 ### Advanced
 
-라이브러리 사용과 파일 시스템, 네트워크, 스레드를 배웁니다.
+라이브러리 사용과 파일 시스템, 네트워크, 스레드 등 고급 기능 기초 학습
 
 ##### 실행방법
 
@@ -90,7 +91,13 @@ cargo run [폴더명] [카테고리번호]
 cargo run asynchronous 1
 ```
 
+```bash
+# axum은 테스트를 많이 해서 번호 없이 실행
+cargo run axum
+```
+
 ```text
+advanced/src
 ├── asynchronous
 │   ├── async01_async_await.rs
 │   ├── async02_tokio_file.rs

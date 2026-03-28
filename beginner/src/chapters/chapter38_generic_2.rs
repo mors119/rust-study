@@ -1,6 +1,6 @@
 pub fn run() {
     let p1 = Point { x: 2, y: 3 };
-    let p3 = Point { x: 2.4, y: 3.5 };
+    let _p3 = Point { x: 2.4, y: 3.5 };
     println!("p1=({},{})", p1.x, p1.y);
 
     let p2 = p1.add(&p1);
