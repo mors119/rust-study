@@ -2,6 +2,21 @@
 
 ### beginner
 
+기초적인 rust 사용 방법을 배웁니다.
+
+##### 실행방법
+
+```bash
+cd beginner/
+cargo run [폴더명] [카테고리번호]
+```
+
+##### 예시
+
+```bash
+cargo run chapter 1
+```
+
 ```text
 ├── chapters
 │ ├── 00.call.md
@@ -59,3 +74,91 @@
 ```
 
 ### Advanced
+
+라이브러리 사용과 파일 시스템, 네트워크, 스레드를 배웁니다.
+
+##### 실행방법
+
+```bash
+cd advanced/
+cargo run [폴더명] [카테고리번호]
+```
+
+##### 예시
+
+```bash
+cargo run asynchronous 1
+```
+
+```text
+├── asynchronous
+│   ├── async01_async_await.rs
+│   ├── async02_tokio_file.rs
+│   ├── async03_tokio_byte.rs
+│   ├── async04_tokio_buf.rs
+│   ├── async05_tokio_tcp_server.rs
+│   ├── async06_tokio_tcp_client.rs
+│   ├── async07_tokio_web_socket.rs
+│   ├── async08_tokio_sample.rs
+│   ├── async09_tokio_web_socket_test.rs
+│   └── mod.rs
+├── command
+│   ├── cmd01_command_line.rs
+│   ├── cmd02_console_input.rs
+│   ├── cmd03_console_output.rs
+│   ├── cmd04_log.rs
+│   └── mod.rs
+├── crawling
+│   ├── crawling01_reqwest.md
+│   ├── crawling01_reqwest.rs
+│   ├── crawling02_get.rs
+│   ├── crawling03_post.rs
+│   ├── crawling04_scraper.rs
+│   ├── crawling05_select.rs
+│   ├── crawling06_node.rs
+│   ├── crawling06-2_thirty_four.md
+│   └── mod.rs
+├── encryption
+│   ├── encryption01_random.rs
+│   ├── encryption02_hash.rs
+│   ├── encryption03_symmetric_key.rs
+│   ├── encryption04_asymmetric_key.rs
+│   └── mod.rs
+├── files
+│   ├── file01_create.rs
+│   ├── file02_write.rs
+│   ├── file03_open.rs
+│   ├── file04_read.rs
+│   ├── file05_del_copy_move.rs
+│   ├── file06_directory.rs
+│   ├── file07_file_backup.rs
+│   └── mod.rs
+├── main.rs
+├── matcher.rs
+├── network
+│   ├── mod.rs
+│   ├── net01_tcp.rs
+│   ├── net02_udp.rs
+│   └── net03_udp_like_tcp.rs
+├── thread
+│   ├── mod.rs
+│   ├── thread01_basic.rs
+│   ├── thread02_move.rs
+│   ├── thread03_mpsc.rs
+│   ├── thread04_mpmc.rs
+│   ├── thread05_rc.rs
+│   ├── thread06_arc.rs
+│   ├── thread07_mutex.rs
+│   └── thread08_arc_mutex.rs
+└── web_server
+    ├── db.rs
+    ├── folder.md
+    ├── mod.rs
+    ├── user
+    │   ├── handler.rs
+    │   ├── mod.rs
+    │   ├── model.rs
+    │   └── repo.rs
+    ├── web_server01_main.rs
+    └── web_server02_actix_web.rs
+```
