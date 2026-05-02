@@ -28,6 +28,21 @@ impl Point {
 &self란?
 self는 해당 메서드를 호출한 인스턴스를 의미하고
 &를 붙였기에 해당 인스턴스를 레퍼런스(주소값) 형태로 참조한다.
+```rust
+impl MyStruct {
+    fn method(self) { ... }
+}
+```
+내부적으로 아래와 같다.
+```rust
+fn method(self: MyStruct)
+```
+
+fn f1() self가 없는 경우 스태틱 메서드, 특정인스턴스에 구애받지 않기 때문에 f1:: 이렇게 호출 가능
+fn f2(self): 메소드가 끝나면 더는 사용하지 않는 함수. 소유권이 이동됨. 체이닝 시에 사용
+fn f3(mut self)
+fn f4(&self): 소유권을 빌렸다가 원본에 다시 돌려줌
+fn f5(&mut self)
 */
 
 // ::  → 타입 기준 접근 (static 느낌), new는 self 없음 → 인스턴스 필요 없음

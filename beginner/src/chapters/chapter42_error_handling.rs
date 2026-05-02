@@ -4,8 +4,8 @@ Rust Error Handling Cheat Sheet
 
 핵심 기준
 ---------
-- 값이 "없을 수 있음"      -> Option<T>
-- "왜 실패했는지"가 중요함 -> Result<T, E>
+- 값이 "없을 수 있음"      -> Option<T> -> Some(V)/None 반환
+- "왜 실패했는지"가 중요함 -> Result<T, E> -> Ok/Err(E) 반환
 - 처리 못 하겠으면 상위로 보내기 -> ?
 - 절대 복구 불가능 / 버그 성격   -> panic! 또는 assert!
 - overflow는 상황에 맞는 명시적 API 사용
@@ -350,6 +350,8 @@ Rust의 정수 overflow는 상황에 따라 다르게 다룰 수 있다.
 - overflowing_add  -> (결과, overflow 여부) 반환
 - saturating_add   -> 최대/최소값에 고정
 - wrapping_add     -> 경계를 넘어가면 순환
+
+- saturating_
 */
 fn overflow_example() {
     println!("\n[overflow handling]");

@@ -10,7 +10,7 @@ pub fn run() {
     //2. 홀수 인덱스에는 1, 짝수 인덱스에는 0을 가지는 배열 만들기
     let mut v = vec![1; 10];
     v.iter_mut()
-        .enumerate()
+        .enumerate() // 인덱스 부여
         .filter(|(i, _)| *i % 2 == 0)
         .for_each(|(_, val)| *val = 0);
     println!("{:?}", v); //[0, 1, 0, 1, 0, 1, 0, 1, 0, 1]

@@ -7,7 +7,7 @@ struct Point {
 
 //  Clone을 직접 구현
 // impl Clone for Point {
-//     fn clone(&self) -> Self {
+//     fn clone(&self) -> Self { // Self는 본인(impl Clone)을 나타냄
 //         Self {
 //             x: self.x.clone(),
 //             y: self.y.clone(),
