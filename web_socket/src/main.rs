@@ -29,7 +29,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("================================");
 
     let args: Vec<String> = std::env::args().collect();
-
     match args.get(1).map(|s| s.as_str()) {
         // 서버 모드
         Some("server") => {
