@@ -11,6 +11,8 @@ fn main() {
     // => ["target/debug/프로그램이름", "1"]
     let args: Vec<String> = env::args().collect(); // rust는 문자열로만 입력값을 받을 수 있다.
 
+    // println!("{:?}", args);
+
     if args.len() < 2 {
         println!("사용법: cargo run <chapter>");
         return;
