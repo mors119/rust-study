@@ -1,5 +1,6 @@
 use std::env;
 
+mod common;
 mod guess_game;
 mod matcher;
 
