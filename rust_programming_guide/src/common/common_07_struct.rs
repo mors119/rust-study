@@ -7,13 +7,13 @@ struct User {
     sign_in_count: u64,
 }
 
-// 튜플 구조체 (Tuple Struct)
+// 튜플 구조체 (Tuple Struct): 이름이 없는 필드를 가지는 구조체입니다. 튜플 구조체는 일반적으로 단일 필드를 가지며, 새로운 타입을 정의할 때 사용됩니다.
 struct Color(i32, i32, i32);
 
-// 단위 구조체 (Unit Struct)
+// 단위 구조체 (Unit Struct): 필드가 없는 구조체입니다. 단위 구조체는 타입 시스템에서 특정한 의미를 나타내기 위해 사용될 수 있습니다.
 struct AlwaysEqual;
 
-// 유사 유닛 구조체 (Newtype Struct)
+// 유사 유닛 구조체 (Newtype Struct) : 단일 필드를 가지는 튜플 구조체로, 새로운 타입을 정의할 때 사용됩니다.
 struct UserId(u64);
 
 // 구조체에 연관 함수
