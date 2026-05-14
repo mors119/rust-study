@@ -8,3 +8,4 @@ pub mod common_07_struct;
 pub mod common_08_enumeration;
 pub mod common_09_crate_package_module;
 pub mod common_10_collection;
+pub mod common_11_error_handling;
