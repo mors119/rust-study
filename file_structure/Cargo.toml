@@ -1,5 +1,93 @@
-[workspace]
+# Workspace 설정 시작
+[workspace] 
+
+# Feature 합치는 방법, Rust 2024 권장값 == 3
+resolver = "3" 
+
+
+# 이 Workspace에 속한 Crate 목록
 members = [
-    "lib_dir",
-    "main_dir"
+"lib_dir",
+"main_dir"
 ]
+
+# workspace 아래 있어도 무시할 것
+exclude = [
+"experiments"
+]
+
+# cargo run 시 실행할 crate
+default-members = [
+"apps/cli"
+]
+
+# ============================================================
+
+# 공통 package 설정
+# 내부 Cargo.toml에서 
+
+# edition.workspace = true
+# license.workspace = true
+# repository.workspace = true
+
+# 위처럼 작성하면 생략 가능해짐.
+
+
+# ============================================================
+
+[workspace.package]
+
+edition = "2024"
+
+license = "MIT"
+
+repository = "https://github.com"
+
+# ============================================================
+
+# 공통 dependency 버전
+
+# ============================================================
+
+[workspace.dependencies]
+
+# serde = "1"
+
+# serde_json = "1"
+
+# uuid = "1"
+
+# chrono = "0.4"
+
+# tokio = "1"
+
+# ============================================================
+
+# 공통 lint
+
+# ============================================================
+
+[workspace.lints.rust]
+
+unsafe_code = "forbid" # unsafe 사용 금지
+
+[workspace.lints.clippy]
+
+all = "warn" # clippy 경고 활성화
+
+pedantic = "warn" # default 구현까지 체크
+
+# ============================================================
+
+# Workspace Profile
+# cargo build --release 시에 사용
+
+# ============================================================
+
+[profile.release]
+
+lto = true # 크레이트 전체 최적화.
+
+codegen-units = 1
+
+strip = true
