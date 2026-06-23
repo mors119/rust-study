@@ -88,6 +88,6 @@ pedantic = "warn" # default 구현까지 체크
 
 lto = true # 크레이트 전체 최적화.
 
-codegen-units = 1
+codegen-units = 1 # 병렬 컴파일 수 16정도가 기본 (낮을수록: 최적화 > 속도)
 
-strip = true
+strip = true # 디버그 심볼 제거 (파일이 아주 작아짐. CLI 배포 시 필수)

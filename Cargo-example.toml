@@ -1,0 +1,494 @@
+# ============================================================
+
+# Cargo.toml Cheat Sheet
+
+# GitHub 오픈소스 분석용
+
+# ============================================================
+
+[package]
+
+name = "my-project"
+
+# 현재 crate 이름
+
+# ex)
+
+# name = "ripgrep"
+
+# name = "serde"
+
+# use ripgrep::...
+
+# use serde::...
+
+version = "0.1.0"
+
+# 현재 패키지 버전
+
+# crates.io 배포 버전
+
+edition = "2024"
+
+# Rust Edition
+
+# 보통 2021 또는 2024
+
+authors = ["Heeseong Kim"]
+
+# 작성자
+
+# 요즘은 거의 안 씀
+
+description = "Example project"
+
+# crates.io 설명
+
+license = "MIT"
+
+# 라이선스
+
+# ex)
+
+# MIT
+
+# Apache-2.0
+
+# MIT OR Apache-2.0
+
+license-file = "LICENSE"
+
+# 라이선스 파일 직접 지정
+
+repository = "https://github.com/user/repo"
+
+# GitHub 저장소
+
+homepage = "https://example.com"
+
+# 프로젝트 홈페이지
+
+documentation = "https://docs.rs/example"
+
+# 문서 URL
+
+readme = "README.md"
+
+# README 파일 위치
+
+keywords = ["rust", "cli"]
+
+# crates.io 검색 키워드
+
+categories = ["command-line-utilities"]
+
+# crates.io 카테고리
+
+publish = false
+
+# crates.io 배포 금지
+
+# 사내 프로젝트나 앱 프로젝트에서 자주 사용
+
+rust-version = "1.88"
+
+# 최소 Rust 버전
+
+build = "build.rs"
+
+# 빌드 스크립트 지정
+
+default-run = "cli"
+
+# cargo run 시 기본 실행 바이너리
+
+exclude = ["docs/*"]
+
+# 패키지 배포 시 제외
+
+include = ["src/**/*"]
+
+# 패키지 배포 시 포함
+
+# ============================================================
+
+# 일반 의존성
+
+# ============================================================
+
+[dependencies]
+
+serde = "1"
+
+# 최신 1.x 사용
+
+serde_json = "1"
+
+tokio = "1"
+
+uuid = "1"
+
+# Feature 활성화
+
+serde = { version = "1", features = ["derive"] }
+
+# 기본 Feature 제거
+
+napi = { version = "2", default-features = false }
+
+# Optional Dependency
+
+sqlite = { version = "0.37", optional = true }
+
+# Local Crate
+
+frilvault-core = { path = "../frilvault-core" }
+
+# Git Dependency
+
+my-lib = { git = "https://github.com/user/repo" }
+
+# Branch 지정
+
+my-lib = { git = "https://github.com/user/repo", branch = "main"}
+
+# Tag 지정
+
+my-lib = { git = "https://github.com/user/repo", tag = "v1.0.0"}
+
+# Commit 지정
+
+my-lib = { git = "https://github.com/user/repo",rev = "abcdef123456"}
+
+# ============================================================
+
+# 테스트 전용
+
+# ============================================================
+
+[dev-dependencies]
+
+tempfile = "3"
+
+# 임시 디렉토리 테스트
+
+mockall = "0.13"
+
+# Mock 생성
+
+rstest = "0.25"
+
+# 테스트 매크로
+
+# ============================================================
+
+# build.rs 전용
+
+# ============================================================
+
+[build-dependencies]
+
+cc = "1"
+
+# C 코드 컴파일
+
+bindgen = "0.72"
+
+# C Header → Rust Binding 생성
+
+# ============================================================
+
+# Feature Flag
+
+# ============================================================
+
+[features]
+
+default = ["cli"]
+
+# cargo build 시 자동 활성화
+
+cli = []
+
+# cargo build --features cli
+
+gui = []
+
+# cargo build --features gui
+
+sqlite = ["dep:sqlite"]
+
+# sqlite dependency 활성화
+
+full = [
+"gui",
+"sqlite"
+]
+
+# 여러 feature 묶음
+
+# ============================================================
+
+# 라이브러리 설정
+
+# ============================================================
+
+[lib]
+
+name = "frilvault_core"
+
+# 라이브러리 이름
+
+path = "src/lib.rs"
+
+# 엔트리 포인트
+
+crate-type = ["rlib"]
+
+# 일반 Rust 라이브러리
+
+crate-type = ["cdylib"]
+
+# Node NAPI
+
+# Tauri
+
+# C FFI
+
+crate-type = ["staticlib"]
+
+# 정적 라이브러리
+
+# ============================================================
+
+# 실행 파일
+
+# ============================================================
+
+[[bin]]
+
+name = "frilvault"
+
+# cargo run --bin frilvault
+
+path = "src/main.rs"
+
+[[bin]]
+
+name = "scan"
+
+path = "src/bin/scan.rs"
+
+[[bin]]
+
+name = "repair"
+
+path = "src/bin/repair.rs"
+
+# ============================================================
+
+# Example
+
+# cargo run --example basic
+
+# ============================================================
+
+[[example]]
+
+name = "basic"
+
+path = "examples/basic.rs"
+
+# ============================================================
+
+# Integration Test
+
+# cargo test --test api
+
+# ============================================================
+
+[[test]]
+
+name = "api"
+
+path = "tests/api.rs"
+
+# ============================================================
+
+# Benchmark
+
+# cargo bench
+
+# ============================================================
+
+[[bench]]
+
+name = "search"
+
+harness = false
+
+# ============================================================
+
+# 플랫폼별 의존성
+
+# ============================================================
+
+[target.'cfg(windows)'.dependencies]
+
+winreg = "0.55"
+
+# Windows Registry 접근
+
+[target.'cfg(unix)'.dependencies]
+
+nix = "0.30"
+
+# Unix 시스템 API
+
+[target.'cfg(target_os = "linux")'.dependencies]
+
+gtk = "0.18"
+
+# Linux GUI
+
+[target.'cfg(target_os = "macos")'.dependencies]
+
+cocoa = "0.26"
+
+# macOS API
+
+[target.'cfg(target_os = "windows")'.dependencies]
+
+windows = "0.62"
+
+# Windows API
+
+[target.'cfg(target_arch = "aarch64")'.dependencies]
+
+special-lib = "1"
+
+# ARM 전용
+
+[target.'cfg(debug_assertions)'.dependencies]
+
+tracing = "0.1"
+
+# Debug 빌드에서만 사용
+
+# ============================================================
+
+# Profile
+
+# 빌드 최적화
+
+# ============================================================
+
+[profile.dev]
+
+opt-level = 0
+
+# 최적화 없음
+
+debug = true
+
+# 디버그 심볼 생성
+
+incremental = true
+
+# 증분 빌드
+
+overflow-checks = true
+
+# 정수 오버플로우 검사
+
+[profile.release]
+
+opt-level = 3
+
+# 최고 최적화
+
+lto = true
+
+# Link Time Optimization
+
+codegen-units = 1
+
+# 성능↑ 빌드속도↓
+
+strip = true
+
+# 심볼 제거
+
+panic = "abort"
+
+# panic 시 즉시 종료
+
+incremental = false
+
+# ============================================================
+
+# 의존성 강제 교체
+
+# ============================================================
+
+[patch.crates-io]
+
+serde = {git = "https://github.com/serde-rs/serde"}
+
+# crates.io serde 대신 git 버전 사용
+
+# ============================================================
+
+# 구버전 (거의 사용 안 함)
+
+# ============================================================
+
+[replace]
+
+"foo:0.1.0" = {path = "../foo"}
+
+# ============================================================
+
+# Badge
+
+# crates.io 표시
+
+# ============================================================
+
+[badges]
+
+maintenance = {status = "actively-developed"}
+
+# ============================================================
+
+# Lint 설정
+
+# ============================================================
+
+[lints.rust]
+
+unsafe_code = "forbid"
+
+# unsafe 사용 금지
+
+unused = "warn"
+
+# 미사용 경고
+
+dead_code = "warn"
+
+# 사용 안 되는 코드 경고
+
+[lints.clippy]
+
+all = "warn"
+
+# 모든 clippy lint
+
+pedantic = "warn"
+
+# 엄격 lint
+
+cargo = "warn"
+
+nursery = "warn"
